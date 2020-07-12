@@ -1,0 +1,16 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+.work_Frame{
+  width: 600px;
+  height: 400px;
+  border: 10px solid #434AA4;
+  border-radius: 15px;
+  background-color: #967AC8;
+  box-shadow: 0 0 19px 16px red;
+  display: flex;
+  flex-direction: row;
+}

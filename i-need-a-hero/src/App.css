@@ -1,0 +1,23 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body{
+ display: flex;
+ background: url(./imege/heroAkadem.png);
+ background-repeat: no-repeat;
+
+}
+
+.main_Frame{
+  margin-top: 45%;
+  margin-left: 95%;
+  width: 650px;
+  height: 450px;
+  display: flex;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+}
