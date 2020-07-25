@@ -11,9 +11,9 @@ class Slider extends React.Component {
   render() {
     return (
       <TinySlider class="my-slider" settings={settings}>
-        <img src="https://placehold.it/200" alt="img"/>
-        <img src="https://placehold.it/200" alt="img"/>
-        <img src="https://placehold.it/200" alt="img"/>
+        <img src="https://placehold.it/200x230" alt="img"/>
+        <img src="https://placehold.it/200x230" alt="img"/>
+        <img src="https://placehold.it/200x230" alt="img"/>
       </TinySlider>
       )
     }

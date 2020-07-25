@@ -12,4 +12,12 @@
   text-align:center;
   align-items: center;
   flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.SearchBar{
+  margin-right: 5%;
+  width: 212px;
+  height: 30px;
 }
