@@ -1,18 +1,17 @@
-*{
+* {
  margin: 0;
  padding: 0;
  box-sizing: border-box;
 }
 
-body{
- display: flex;
- background: url(./imege/marvel.jpg);
-
+body {
+  display: flex;
+  background: url(./imege/marvel.jpg);
+  background-size: contain;
 }
 
-.main_Frame{
-  margin-top: 20%;
-  margin-left: 45%;
+.main_Frame {
+  margin: auto;
   width: 950px;
   height: 450px;
   display: flex;
