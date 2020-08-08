@@ -13,9 +13,11 @@ const settings = {
 
 class CardHero extends React.Component {
   render() {
+    console.log('Hero:', this.props.hero)
     return (
       <div className="card_Hero">
         <div className="sliderInputbox">
+          <h3>{this.props.hero.name}</h3>
           <div className="SliderBox">
           <Slider />
           </div>

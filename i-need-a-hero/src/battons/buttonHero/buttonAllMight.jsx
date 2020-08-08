@@ -15,7 +15,7 @@ export default function TextButtons() {
 
   return (
     <div className={classes.root}>
-      <Button color="primary"><h3>All Might</h3></Button>
+      <Button color="primary">All Might</Button>
     </div>
   );
 }
