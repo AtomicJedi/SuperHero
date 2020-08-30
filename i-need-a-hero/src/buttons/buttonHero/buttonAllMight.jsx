@@ -10,12 +10,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TextButtons() {
+
+const ButtonAllMight = ({
+  hero,
+  onClick,
+  ...props
+}) => {
   const classes = useStyles();
+  const handleHeroSelect = React.useCallback(() => {
+    onClick(hero)
+  }, [hero, onClick])
 
   return (
     <div className={classes.root}>
-      <Button color="primary"><h3>Saitama</h3></Button>
+      <Button {...props} onClick={handleHeroSelect} />
     </div>
   );
 }
+ButtonAllMight.defaultProps = {
+  color: 'primary',
+  children: 'All Might'
+}
+export default ButtonAllMight

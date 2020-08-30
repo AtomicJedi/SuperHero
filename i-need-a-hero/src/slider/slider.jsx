@@ -1,10 +1,14 @@
 import React from 'react';
 import TinySlider from "tiny-slider-react";
+import PrevButton from "tiny-slider-react";
 
 const settings = {
   lazyload: true,
   nav: false,
-  mouseDrag: true
+  mouseDrag: true,
+  prevButton: {
+    border: 7
+  }
 };
 
 class Slider extends React.Component {

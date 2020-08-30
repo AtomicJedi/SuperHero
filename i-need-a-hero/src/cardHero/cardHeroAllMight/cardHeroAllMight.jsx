@@ -1,9 +1,9 @@
 import React from 'react';
-import ButtonUpload from './../buttons/buttonUpload/button_upload.jsx';
-import TrasButton from './../buttons/trasButton/trasButton.jsx';
-import Slider from './../slider/slider.jsx';
-import InputForm from './../inputForm/inputForm.jsx';
-import "./cardHero.css";
+import ButtonUpload from './../../buttons/buttonUpload/button_upload.jsx';
+import TrasButton from './../../buttons/trasButton/trasButton.jsx';
+import Slider from './../../slider/slider.jsx';
+import InputForm from './inputFormAllMight.jsx';
+import "./../cardHero.css";
 
 const settings = {
   lazyload: true,
@@ -11,7 +11,7 @@ const settings = {
   mouseDrag: true
 };
 
-class CardHero extends React.Component {
+class CardAllMight extends React.Component {
   render() {
     return (
       <div className="card_Hero">
@@ -37,4 +37,4 @@ class CardHero extends React.Component {
     )
   }
 }
-export default CardHero;
+export default CardAllMight;

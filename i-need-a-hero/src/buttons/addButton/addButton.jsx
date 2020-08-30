@@ -2,6 +2,7 @@ import React from 'react';
 import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { green, purple } from '@material-ui/core/colors';
+import Modal from '@material-ui/core/Modal';
 
 const BootstrapButton = withStyles({
   root: {
@@ -39,6 +40,7 @@ const BootstrapButton = withStyles({
       boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
     },
   },
+
 })(Button);
 
 const ColorButton = withStyles((theme) => ({
@@ -49,6 +51,7 @@ const ColorButton = withStyles((theme) => ({
       backgroundColor: purple[700],
     },
   },
+
 }))(Button);
 
 const useStyles = makeStyles((theme) => ({
@@ -56,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
 }));
+
 
 const theme = createMuiTheme({
   palette: {
@@ -68,7 +72,14 @@ export default function CustomizedButtons() {
 
   return (
     <div>
-      <BootstrapButton variant="contained" color="primary" disableRipple className={classes.margin}>
+      <BootstrapButton variant="contained"
+        color="primary"
+        disableRipple
+        className={classes.margin}
+        // onClick={handleOpen}
+
+        // {...props}
+        >
         I need a hero!!!
       </BootstrapButton>
     </div>
