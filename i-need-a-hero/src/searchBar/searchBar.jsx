@@ -71,7 +71,19 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  "@global":{
+    ".MuiAppBar-root":{
+      height: 42,
+      // color: '#434AA4',
+        },
+    ".MuiAppBar-colorPrimary":{
+      backgroundColor: '#434AA4',
+    },
+  }
+
+
 }));
+
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();

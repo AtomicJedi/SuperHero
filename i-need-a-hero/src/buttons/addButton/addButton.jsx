@@ -2,7 +2,9 @@ import React from 'react';
 import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { green, purple } from '@material-ui/core/colors';
-import Modal from '@material-ui/core/Modal';
+import Dialog from '@material-ui/core/Dialog';
+// import Dialog from './../modalCreateHero/modalCreateHero.jsx';
+
 
 const BootstrapButton = withStyles({
   root: {
@@ -43,6 +45,13 @@ const BootstrapButton = withStyles({
 
 })(Button);
 
+const AddBatton = ({
+  open,
+  setOpen,
+  handleClickOpen,
+  ...props
+}) => {
+
 const ColorButton = withStyles((theme) => ({
   root: {
     color: theme.palette.getContrastText(purple[500]),
@@ -67,21 +76,28 @@ const theme = createMuiTheme({
   },
 });
 
-export default function CustomizedButtons() {
-  const classes = useStyles();
+const handleHeroModal = React.useCallback(() => {
+  setOpen(open)
+}, [open, setOpen])
 
-  return (
-    <div>
-      <BootstrapButton variant="contained"
-        color="primary"
-        disableRipple
-        className={classes.margin}
-        // onClick={handleOpen}
+return(
+  <div>
+    <BootstrapButton
+      {...props}
+      setOpen={handleHeroModal}
+      variant="contained"
+      disableRipple
 
-        // {...props}
-        >
-        I need a hero!!!
-      </BootstrapButton>
-    </div>
-  );
-}
+      >
+      I need a hero!!!
+    </BootstrapButton>
+  </div>
+);
+
+ }
+AddBatton.defaultProps = {
+   color: 'primary',
+   // className={classes.margin}
+ }
+
+export default AddBatton;

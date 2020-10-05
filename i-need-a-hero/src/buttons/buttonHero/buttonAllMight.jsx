@@ -17,6 +17,7 @@ const ButtonAllMight = ({
   ...props
 }) => {
   const classes = useStyles();
+
   const handleHeroSelect = React.useCallback(() => {
     onClick(hero)
   }, [hero, onClick])

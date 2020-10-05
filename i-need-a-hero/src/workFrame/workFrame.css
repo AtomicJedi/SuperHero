@@ -4,7 +4,7 @@
  box-sizing: border-box;
 }
 
-.work_Frame{
+.work_Frame {
   width: 1200px;
   height: 500px;
   border: 10px solid #434AA4;
@@ -13,4 +13,26 @@
   box-shadow: 0 0 19px 16px red;
   display: flex;
   flex-direction: row;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.sideBarGroup {
+  display: flex;
+  width: 200px;
+  height: 88%;
+}
+
+.sideBarBox {
+  display: flex;
+  text-align:center;
+  align-items: center;
+  flex-direction: row;
+  width: 200px;
+  height: 420px;
+}
+
+.addButtonBox {
+  width: 187px;
+  height: 53px;
 }
