@@ -6,6 +6,24 @@ import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
+import {
+  createMuiTheme,
+  withStyles,
+  makeStyles,
+  ThemeProvider
+} from '@material-ui/core/styles'
+
+const Dialog = withStyles({
+  root: {
+    backgroundColor: '#967AC8',
+  },
+  "@global":{
+
+    ".MuiPaper-root":{
+      backgroundColor: '#967AC8',
+    },
+  }
+})(Peper);
 
 export default function FormDialog ({ open, onClose: handleClose }) {
   return (
