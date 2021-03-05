@@ -1,8 +1,0 @@
-﻿FROM node:15.11.0
-LABEL maintainer="artem.kabanov"
-WORKDIR tmp/proj/appCli
-COPY . ./appFirst
-VOLUME /home/proj
-RUN npm install pm2@latest -g
-RUN npm i yarn
-RUN npm i htop

@@ -1,0 +1,4 @@
+﻿FROM node:15.11.0
+LABEL maintainer="artem.kabanov"
+RUN npm install -g pm2@latest yarn
+RUN apt-get update && apt-get install htop 
