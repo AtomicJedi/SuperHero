@@ -1,0 +1,64 @@
+version: "3.8"
+services:
+  nodecli: 
+    image: nodecli
+    container_name: nodecli
+    restart: always
+    ports:
+        - "85:8050"
+    networks:
+      - app-network
+    
+  nodeserv: 
+    image: nodeserv
+    container_name: nodeserv
+    restart: always
+    ports:
+        - "80:8051"
+    networks:
+      - app-network          
+
+  nginx:
+    image: nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "81:8060"
+    networks:
+      - app-network
+          
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: dev
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+    networks:
+      - app-network
+
+  mongoexpress:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: dev
+      ME_CONFIG_MONGODB_ADMINPASSWORD: 123456
+    networks:
+      - app-network  
+
+  redis:
+    image: "redis:alpine"
+    container_name: redis
+    command: redis-server --requirepass 123456
+    ports:
+    - "6379:8055"
+    networks:
+      - app-network   
+        
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge        
