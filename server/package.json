@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "async": "^3.2.0",
+    "fastify": "^3.13.0",
+    "fastify-config-loader": "^1.1.2",
+    "fastify-env": "^2.1.0",
+    "fastify-swagger": "^4.4.1"
+  },
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -8,8 +8,22 @@ down:
 stop:
 	docker-compose stop
 
-shellcli:
-	docker exec -it --user="1000" nodecli bash	
+shellCli:
+	docker exec -it --user="1000" nodecli bash
 
-shellserv:
-	docker exec -it --user="1000" nodeserv bash	
+shellServ:
+	docker exec -it --user="1000" nodeserv bash
+
+upCli:
+	docker-compose up nodecli
+
+stopCli:
+	docker-compose stop nodecli
+
+upCli123:
+	docker-compose run --rm --user="1000" nodecli npm run start
+
+startBash:
+	docker-compose run --rm --user="1000" -p 4000:4000 nodeserv bash
+startBnE:
+	docker-compose up mongo && docker-compose up mongo-express

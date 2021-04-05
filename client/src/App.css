@@ -1,0 +1,22 @@
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+ display: flex;
+ justify-content: center;
+ background: url(./imege/marvel.jpg);
+ background-size: contain;
+}
+
+.main_Frame {
+  margin-top: 35%;
+  width: 950px;
+  height: 450px;
+  display: flex;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+}
