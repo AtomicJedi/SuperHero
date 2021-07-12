@@ -1,6 +1,7 @@
 import React from 'react';
-import TinySlider from "tiny-slider-react";
-import PrevButton from "tiny-slider-react";
+import SliderSlic from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const settings = {
   lazyload: true,
@@ -11,15 +12,26 @@ const settings = {
   }
 };
 
-class Slider extends React.Component {
-  render() {
+export default function Slider() {
+    var settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    };
     return (
-      <TinySlider class="my-slider" settings={settings}>
-        <img src="https://placehold.it/200x230" alt="img"/>
-        <img src="https://placehold.it/200x230" alt="img"/>
-        <img src="https://placehold.it/200x230" alt="img"/>
-      </TinySlider>
-      )
-    }
-  }
-export default Slider;
+        <SliderSlic {...settings}>
+            <div>
+                <img src="https://www.fillmurray.com/230/340" alt="Img"/>
+            </div>
+            <div>
+                <img src="https://www.fillmurray.com/230/340" alt="Img"/>
+            </div>
+            <div>
+                <img src="https://www.fillmurray.com/230/340" alt="Img"/>
+            </div>
+                       
+        </SliderSlic>
+    );
+}

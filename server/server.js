@@ -1,13 +1,17 @@
+import FormDialog from "../client/src/modalCreateHero/modalCreateHero";
+import {log} from "async";
+
 const fastify = require('fastify')({logger: true});
-const fastifyEnv = require('fastify-env');
+const {PORT} = require('server/config/config.JS');
 const mainRouter = require('./routes/servRoutes')
+const mercurius = require('mercurius')
+const {typeDefs, resolvers} = require('./gqlSchema/gqlSchema')
+const entPoint = require('./entPoint')
 
-const PORT = 4000;
-
-async function start() {
+(async () => {
 
   mainRouter(fastify)
-
+  console.log(PORT)
   fastify.listen(PORT, '0.0.0.0', function (err, address) {
     if (err) {
       fastify.log.error(err)
@@ -15,6 +19,11 @@ async function start() {
     }
     fastify.log.info(`server listening on ${address}`)
   })
-}
-start()
-    
+
+  fastify.register(mercurius, {
+    typeDefs,
+    resolvers
+  })
+  fastify.get('/', entPoint)
+
+})()

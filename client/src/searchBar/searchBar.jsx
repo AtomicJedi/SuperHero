@@ -77,7 +77,9 @@ const useStyles = makeStyles((theme) => ({
       // color: '#434AA4',
         },
     ".MuiAppBar-colorPrimary":{
-      backgroundColor: '#434AA4',
+      backgroundColor: 'rgba(150, 122, 200, 0.7);',
+      color: 'white',
+      'border-bottom-right-radius': '9px'
     },
   }
 

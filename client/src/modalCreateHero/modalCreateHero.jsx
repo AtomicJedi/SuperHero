@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 import Dialog from '@material-ui/core/Dialog'
@@ -7,14 +7,14 @@ import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import { makeStyles } from '@material-ui/core/styles';
-import {heroName} from "../redux/modalNewHero/actionModal";
+import {addheroNameModal} from "../redux/modalNewHero/actionModal";
 import {useDispatch, useSelector} from "react-redux";
 
 const useStyles = makeStyles({
     DiaBgrnd: {
       '& > * div': {
-        backgroundColor: '#c6a8fd'
-
+        maxWidth: '300px',
+        backgroundColor: 'rgba(191,155,255, 0.7)'
       }
     }
   }
@@ -25,16 +25,22 @@ const useStyles = makeStyles({
 export default function FormDialog ({ open, onClose: handleClose }) {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const closeAddSuccess = useSelector(state => state.modalHeroAdd.open);
-  const nameHeroForAll = useSelector(state => state.modalHeroAdd.nameHero);
-  console.log(nameHeroForAll)
+  // const closeAddSuccess = useSelector(state => state.modalHeroAdd.open);
+  // const nameHeroForAll = useSelector(state => state.modalHeroAdd.nameHero);
+  // const {moreHero} = useSelector(state => state);
+  // console.log(moreHero)
 
-  const handleCreateName = (event) => {
-    let nameHeroValue = event.target.value;
-    console.log(nameHeroValue)
+  const [heroNameBtn, setInput] = useState('')
 
-    // nameHeroForAll(nameHeroValue)
-    dispatch(heroName(false, {nameHeroValue}))
+  const addInputModal = (e) =>{
+    e.preventDefault();
+    const {value} = e.target;
+    console.log(value);
+    setInput(value);
+  }
+
+  const handleCreateName = () => {
+    dispatch(addheroNameModal(false, {heroNameBtn}))
   }
 
 
@@ -58,7 +64,7 @@ export default function FormDialog ({ open, onClose: handleClose }) {
             label='Please enter name a hero'
             fullWidth
             // value={nameHeroForAll}
-            onChange={ e => handleCreateName(e)}
+            onChange={(e) => addInputModal(e)}
           />
         </DialogContent>
         <DialogActions>

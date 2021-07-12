@@ -1,15 +1,16 @@
 import {OPENADDHERO} from "./openModalAddHero";
+import {NAMEHERO} from "./openModalAddHero";
 
 export function changeModal(open){
 	return {
 		type: OPENADDHERO,
-		payload: open
+		payload: open,
 	}
 }
 
-export function heroName(open, name){
+export function addheroNameModal(open, name){
 	return {
-		type: OPENADDHERO,
+		type: NAMEHERO,
 		payload: open,
 		nameHeroPayload: name,
 	}

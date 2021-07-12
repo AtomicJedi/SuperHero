@@ -14,7 +14,9 @@ shellCli:
 shellServ:
 	docker exec -it --user="1000" nodeserv bash
 
+#полностью рабочий
 upCli:
+	docker-compose run nodecli npm install
 	docker-compose up nodecli
 
 stopCli:
